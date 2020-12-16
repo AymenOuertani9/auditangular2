@@ -1,0 +1,28 @@
+.image{
+  height:45em; background-size:cover; width:100%;
+  background-image:url('https://us.123rf.com/450wm/jirsak/jirsak1707/jirsak170700007/82255755-la-s%C3%A9curit%C3%A9-et-les-informations-de-la-technologie-de-l-amp-information-des-services-de-donn%C3%A9es-ou-le-lien-.jpg?ver=6');
+  background-position:800% 50%;
+
+
+}
+
+.container{
+  margin-left: 26.0663%;
+
+
+
+
+
+}
+td {
+  height: 40px;
+  vertical-align: bottom;
+  text-align: center;
+  margin-left: 20%;
+  wigth: 50px
+}
+th {
+  text-align: center;
+}
+
+

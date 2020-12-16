@@ -1,0 +1,13 @@
+/*.container{
+  margin-right: 1270.9%;
+  margin-left: -1.1%
+
+}
+*/
+.image{
+  height:45em; background-size:cover; width:100%;
+  background-image:url('https://www.akamai.com/fr/fr/multimedia/images/intro/2018/akamai-talking-cyber-security-with-board-of-directors-intro.jpg?imwidth=1366');
+  background-position:800% 50%;
+
+
+}

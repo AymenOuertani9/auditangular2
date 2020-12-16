@@ -1,0 +1,43 @@
+<table class="table table-bordered table-dark">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Question</th>
+    <th scope="col">Réponse</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of risques | paginate: {
+         id: 'listing_pagination',
+         itemsPerPage: 10,
+         currentPage: page,
+         totalItems: totalRecord
+         } ">
+    <td>{{r.id}}</td>
+    <td>{{r.question}}</td>
+    <td>{{r.reponse}}</td>
+    <td class="text-center">
+      <a class='btn btn-success'  (click)="gotoEditRisque(r.id)"><span class="glyphicon glyphicon-edit"></span>Modifier</a> <br>
+      &nbsp;&nbsp;<a  class="btn btn-danger btn-xs" (click)="deleteRisque(r.id)"><span class="glyphicon glyphicon-remove"></span>Suprimer </a>&nbsp;
+    </td>
+  </tr>
+
+  </tbody>
+  <div  class="col-md-24">
+    <pagination-controls
+      id="listing_pagination"
+      maxSize="5"
+      directionLinks="true"
+
+      (pageChange)=" page = $event"
+    ></pagination-controls>
+  </div>
+</table>
+&nbsp;&nbsp;
+<button type="button" class="btn btn-dark" (click)="gotoAddRisque()">Ajouter un nouveau question</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-dark" (click)="gotoRapport()">Afficher le Rapport d'audit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-dark" (click)="gotoListClient()">Liste des Clients</button>
+
+
+

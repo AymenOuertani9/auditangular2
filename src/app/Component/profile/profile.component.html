@@ -1,0 +1,171 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="container emp-profile">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head" *ngFor="let u of users">
+                            <h5>
+                                {{u.username}}
+                            </h5>
+                            <h6>
+                                {{u.secteur}}
+                            </h6>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#homepp" role="tab" aria-controls="General" aria-selected="true">General</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="reclamation" aria-selected="false">Mes Reclamation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#com" role="tab" aria-controls="commentaire" aria-selected="false">Mes Commentaire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#rdv" role="tab" aria-controls="rendezvous" aria-selected="false">Mes Rendez-vous</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>Acces rapide</p>
+                    <a href="reclamation">Reclamation</a><br/>
+                    <a href="questionaire">Questionaire</a><br/>
+                    <a href="AjouterRendezVous">Rendez-vous</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="homepp" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Username</label>
+                                    </div>
+                                    <div class="col-md-6" *ngFor="let u of users">
+                                        <p>{{u.username}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Secteur</label>
+                                    </div>
+                                    <div class="col-md-6" *ngFor="let u of users">
+                                        <p>{{u.secteur}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6" *ngFor="let u of users">
+                                        <p>{{u.email}}</p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="reclamation" >
+                                <div class="row" *ngFor="let u of reclamation">
+                                    <div class="col-md-6">
+                                        <label>Username</label>
+                                    </div>
+                                    <div class="col-md-6" >
+                                        <p>{{u.username}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Reclamation</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{u.reclamation}}</p>
+                                    </div>
+                                    <hr style="width:50%;text-align:left">
+                                </div>       
+                    </div>
+                    <div class="tab-pane fade" id="com" role="tabpanel" aria-labelledby="commentaire" >
+                        <div class="row" *ngFor="let us of commentaire">
+                            <div class="col-md-6">
+                                <label>Date de creation</label>
+                            </div>
+                            <div class="col-md-6" >
+                                <p>{{us.createTime}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Commentaire</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{us.commentaire}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Niveau De Satesfaction</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{us.niveaudesatesfaction}}</p>
+                            </div>
+                            <hr style="width:50%;text-align:left">
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="rdv" role="tabpanel" aria-labelledby="rendezvous" >
+                        <div class="row" *ngFor="let u of rendezvous">
+                            <div class="col-md-8">
+                            <div *ngIf="u.date > c ; else elsezz ">
+                                <div class="alert alert-success" role="alert">
+                                le Rendez-vous est dans une date prochaine    
+                                </div>
+                            </div>
+                            <ng-template #elsezz>
+                                <div class="alert alert-danger" role="alert">
+                                    le Rendez-vous est deja passé    
+                                    </div>
+                              </ng-template>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Date de creation</label>
+                            </div>
+                            <div class="col-md-6" >
+                                <p>{{u.createTime}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Lieu</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{u.lieu}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Date</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{u.date}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Heure De Debut</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{u.heurededebut}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Heure De Fin</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{u.heuredefin}}</p>
+                            </div>
+                            <hr style="width:50%;text-align:left">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        

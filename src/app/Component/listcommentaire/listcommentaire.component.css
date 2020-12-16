@@ -1,0 +1,25 @@
+.image{
+  height:45em; background-size:cover; width:100%;
+  background-image:url('https://images.ladepeche.fr/api/v1/images/view/5c8f7b12d286c20bb3643796/large/image.jpg');
+  background-position:800% 50%;
+
+
+}
+.container{
+  margin-right: 26.9%;
+
+
+
+
+
+}
+td {
+  height: 40px;
+  vertical-align: bottom;
+  text-align: center;
+  margin-left: 20%;
+  wigth: 50px
+}
+th {
+  text-align: center;
+}

@@ -1,0 +1,31 @@
+<div class="image">
+  <br>
+  <br>
+  <p style="color:LightGray;"> <strong> <em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ajouter un Rendez_Vous </em> </strong></p>
+<div class="container">
+  <form #addrisqueform="ngForm" (ngSubmit)="addrendezvousformsubmit()">
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="lieu" style="color:LightGray;">lieu de rendez_vous</label>
+        <input type="text" class="form-control" required  [(ngModel)]="rendezvous.lieu" name="lieu">
+      </div>
+      <div class="form-group">
+        <label for="heurededebut" style="color:LightGray;">heure de debut de rendez_vous</label>
+        <input type="time" step="30" class="form-control" required  [(ngModel)]="rendezvous.heurededebut" name="heurededebut">
+      </div>
+      <div class="form-group">
+        <label for="heuredefin" style="color:LightGray;">heure de fin de rendez_vous</label>
+        <input type="time" step="30" class="form-control" required  [(ngModel)]="rendezvous.heuredefin" name="heuredefin">
+      </div>
+      <div class=".form_datetime">
+        <label for="date" style="color:LightGray;">date de rendez_vous</label>
+        <input type="date"  placeholder="YYYY-MM-DD" class="form-control" required  [(ngModel)]="rendezvous.date"   name="date">
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-secondary">Submit</button>
+    </div>
+  </form>
+</div>
+</div>
